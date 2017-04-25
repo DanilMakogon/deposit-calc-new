@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-
 int CheckInput(int depDay, int sum)
 {
 	if ((depDay >= 0) && (depDay <= 365) && (sum >= 10000))
@@ -30,23 +27,4 @@ int CalcSumDeposit(int depDay, int sum)
 		sum *= 1.0 + 0.12 + bonusPercent * 3;
 	}
 	return sum;
-}
-
-int main()
-{
-	int depDay, sum;
-	printf("Input days: ");
-	scanf("%d", &depDay);
-	printf("Input money: ");
-	scanf("%d", &sum);
-
-	if (CheckInput(depDay, sum) == 0)
-	{
-		printf("Incoreect input\n");
-		return 1;
-	}
-
-	printf("%d", CalcSumDeposit(depDay, sum));
-
-	return 0;
 }
